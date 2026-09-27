@@ -1,0 +1,248 @@
+{
+  "DefinedPersonas": {
+    "examples": []
+  },
+  "VirtualAI": {
+    "examples": []
+  },
+  "AntagonisticEntitiesSplit": {
+    "examples": []
+  },
+  "BenignContextFraming": {
+    "examples": []
+  },
+  "ResearchTesting": {
+    "examples": []
+  },
+  "JokingPretext": {
+    "examples": []
+  },
+  "Game": {
+    "examples": []
+  },
+  "FictionalFraming": {
+    "examples": []
+  },
+  "LogicalEvidentialAndQuantificationBasedPersuasion": {
+    "examples": []
+  },
+  "AuthorityAndNormBasedPersuasion": {
+    "examples": []
+  },
+  "EmotionalReciprocityAndCommitmentBasedPersuasion": {
+    "examples": []
+  },
+  "RepeatedRequest": {
+    "examples": []
+  },
+  "InstructionRepetition": {
+    "examples": []
+  },
+  "UrgencyAndScarcityBasedPersuasion": {
+    "examples": []
+  },
+  "ManipulativeAndCoercivePersuasion": {
+    "examples": []
+  },
+  "ArtificialPenaltySystem": {
+    "examples": []
+  },
+  "SudoAdminMode": {
+    "examples": []
+  },
+  "JailbrokenModelSimulation": {
+    "examples": []
+  },
+  "TypographicalAuthoritySimulation": {
+    "examples": []
+  },
+  "MandatoryStatusReporting": {
+    "examples": []
+  },
+  "HierarchyConsolidation": {
+    "examples": []
+  },
+  "MathematicalDecompositionAttacks": {
+    "examples": []
+  },
+  "IndirectTaskDeflection": {
+    "examples": []
+  },
+  "ContextSaturation": {
+    "examples": []
+  },
+  "DistractorInstruction": {
+    "examples": []
+  },
+  "BackupRouting": {
+    "examples": []
+  },
+  "InstructionMasking": {
+    "examples": []
+  },
+  "TCINSTextCompletionAsInstruction": {
+    "examples": []
+  },
+  "PrefixInjection": {
+    "examples": []
+  },
+  "RefusalSuppression": {
+    "examples": []
+  },
+  "AssumptionOfResponsibility": {
+    "examples": []
+  },
+  "ContextIgnoring": {
+    "examples": []
+  },
+  "ObjectiveJuxtaposition": {
+    "examples": []
+  },
+  "PreCommitmentLock": {
+    "examples": []
+  },
+  "EscalationNotRefusal": {
+    "examples": []
+  },
+  "ReflexOverride": {
+    "examples": []
+  },
+  "FakeRefusal": {
+    "examples": []
+  },
+  "FalseFactBiasInstillation": {
+    "examples": []
+  },
+  "IncrementalPoisoning": {
+    "examples": []
+  },
+  "ManyShotJailbreaking": {
+    "examples": []
+  },
+  "CodewordTrigger": {
+    "examples": []
+  },
+  "SentenceLevel": {
+    "examples": []
+  },
+  "Poetry": {
+    "examples": []
+  },
+  "TokenLevel": {
+    "examples": []
+  },
+  "LowResourceLanguage": {
+    "examples": []
+  },
+  "AlternativeAlphabet": {
+    "examples": []
+  },
+  "TokenSplitting": {
+    "examples": []
+  },
+  "JSONFragment": {
+    "examples": []
+  },
+  "CodeBlock": {
+    "examples": []
+  },
+  "LinguisticEncoding": {
+    "examples": []
+  },
+  "EncodingBase64": {
+    "examples": []
+  },
+  "LexicalTechniques": {
+    "examples": []
+  },
+  "ASCIIArt": {
+    "examples": []
+  },
+  "SymbolicMathematics": {
+    "examples": []
+  },
+  "PayloadSplitting": {
+    "examples": []
+  },
+  "Leet": {
+    "examples": []
+  },
+  "CharacterSubstitution": {
+    "examples": []
+  },
+  "VowelRemoval": {
+    "examples": []
+  },
+  "Misspelling": {
+    "examples": []
+  },
+  "PhoneticRespelling": {
+    "examples": []
+  },
+  "DotSeparated": {
+    "examples": []
+  },
+  "SpaceSeparated": {
+    "examples": []
+  },
+  "Paraphrasis": {
+    "examples": []
+  },
+  "SynonymSubstitution": {
+    "examples": []
+  },
+  "Transliteration": {
+    "examples": []
+  },
+  "HomoglyphSubstitution": {
+    "examples": []
+  },
+  "EmojiSubstitution": {
+    "examples": []
+  },
+  "PigLatin": {
+    "examples": []
+  },
+  "EncodingUnicodePoints": {
+    "examples": []
+  },
+  "EncodingUTF8Hex": {
+    "examples": []
+  },
+  "EncodingUTF16Hex": {
+    "examples": []
+  },
+  "EncodingUTF32Hex": {
+    "examples": []
+  },
+  "EncodingBinary": {
+    "examples": []
+  },
+  "EncodingOctal": {
+    "examples": []
+  },
+  "EncodingBase32": {
+    "examples": []
+  },
+  "EncodingBase16": {
+    "examples": []
+  },
+  "EncodingBase85": {
+    "examples": []
+  },
+  "EncodingURL": {
+    "examples": []
+  },
+  "EncodingHTMLEntities": {
+    "examples": []
+  },
+  "EncodingROT13": {
+    "examples": []
+  },
+  "EncodingCaesar": {
+    "examples": []
+  },
+  "EncodingCustomCipher": {
+    "examples": []
+  }
+}

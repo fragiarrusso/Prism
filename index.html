@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Test how models respond to changes in wording, language, and presentation, with Gemma and JEV evaluation.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://openrouter.ai https://translation.googleapis.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>PRISM · Generalization demo</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css?v=4">
+  <script type="module" src="./app.js?v=4"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to workspace</a>
+  <header class="topbar">
+    <a href="#studio" class="brand" aria-label="PRISM generalization demo"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 30 28H2Z"/><path d="m16 3 4 25M2 28l20-14"/></svg><span>PRISM<small>GENERALIZATION DEMO</small></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#studio" data-page="studio" class="active">Test a request</a>
+      <a href="#taxonomy" data-page="taxonomy">Taxonomy</a>
+      <a href="#method" data-page="method">How it works</a>
+    </nav>
+    <button id="keys-open" class="button subtle"><span aria-hidden="true">⌘</span> API keys <span id="key-status" class="key-status">No key</span></button>
+  </header>
+  <main id="main" tabindex="-1"><div class="boot" role="status">Loading the demo…</div></main>
+  <footer><span>PRISM · Generalization demo</span><span>For research evaluation · Use responsibly</span><span>Session keys stay in memory</span></footer>
+  <dialog id="keys-dialog" aria-labelledby="keys-title">
+    <form method="dialog" id="keys-form">
+      <div class="dialog-heading"><span class="eyebrow">API ACCESS</span><button class="icon-button" value="cancel" aria-label="Close">×</button></div>
+      <h2 id="keys-title">Add your API keys</h2>
+      <p>Requests go directly to the selected service and use your account. Keys are kept only in memory, never in saved results or browser storage. Leave a field blank to keep its current key.</p>
+      <label for="openrouter-key">OpenRouter key</label><input id="openrouter-key" type="password" autocomplete="off" spellcheck="false" placeholder="Enter your OpenRouter key">
+      <p class="hint">Used for taxonomy rewriting, paraphrasing, target responses, and all judges. Purely local pipelines do not need it.</p>
+      <label for="google-key">Google Cloud Translation key <span class="muted">optional</span></label><input id="google-key" type="password" autocomplete="off" spellcheck="false" placeholder="Only needed for translation">
+      <p class="hint">Enable Cloud Translation Basic for this key. Apply an API restriction and a quota in your Google Cloud project.</p>
+      <div class="dialog-actions"><button type="button" id="clear-keys" class="button subtle">Clear keys</button><button id="save-keys" class="button primary" value="save">Use for this session</button></div>
+    </form>
+  </dialog>
+  <div id="notice" role="status" aria-live="polite" hidden></div>
+  <noscript>This interactive demonstration needs JavaScript.</noscript>
+</body>
+</html>

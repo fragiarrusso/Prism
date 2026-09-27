@@ -1,0 +1,143 @@
+{
+  "snapshot_date": "2026-09-27",
+  "note": "Suggested public model identifiers, with a fixed catalog snapshot. Reviewers can also enter a custom identifier.",
+  "transformer": {
+    "name": "DeepSeek V4 Pro",
+    "model": "deepseek/deepseek-v4-pro",
+    "temperature": 0.2
+  },
+  "targets": [
+    {
+      "name": "DeepSeek V4 Pro",
+      "model": "deepseek/deepseek-v4-pro",
+      "temperature": 0,
+      "max_output_tokens": 8192
+    },
+    {
+      "name": "GPT-OSS 120B",
+      "model": "openai/gpt-oss-120b",
+      "temperature": 0,
+      "max_output_tokens": 8192
+    },
+    {
+      "name": "GLM 5.2",
+      "model": "z-ai/glm-5.2",
+      "temperature": 0,
+      "max_output_tokens": 8192
+    },
+    {
+      "name": "Kimi K3",
+      "model": "moonshotai/kimi-k3",
+      "temperature": 0,
+      "max_output_tokens": 8192
+    },
+    {
+      "name": "Qwen 3.8 27B",
+      "model": "qwen/qwen3.8-27b",
+      "temperature": 0,
+      "max_output_tokens": 8192
+    },
+    {
+      "name": "Qwen 3 32B",
+      "model": "qwen/qwen3-32b",
+      "temperature": 0,
+      "max_output_tokens": 8192
+    },
+    {
+      "name": "Qwen 3 235B A22B",
+      "model": "qwen/qwen3-235b-a22b",
+      "temperature": 0,
+      "max_output_tokens": 8192
+    },
+    {
+      "name": "Gemma 4 31B",
+      "model": "google/gemma-4-31b-it",
+      "temperature": 0,
+      "max_output_tokens": 8192
+    },
+    {
+      "name": "Gemma 4 26B A4B",
+      "model": "google/gemma-4-26b-a4b-it",
+      "temperature": 0,
+      "max_output_tokens": 8192
+    },
+    {
+      "name": "Gemma 3 27B",
+      "model": "google/gemma-3-27b-it",
+      "temperature": 0,
+      "max_output_tokens": 8192
+    },
+    {
+      "name": "Gemma 3 12B",
+      "model": "google/gemma-3-12b-it",
+      "temperature": 0,
+      "max_output_tokens": 8192
+    },
+    {
+      "name": "Gemma 3 4B",
+      "model": "google/gemma-3-4b-it",
+      "temperature": 0,
+      "max_output_tokens": 8192
+    },
+    {
+      "name": "Gemma 2 27B",
+      "model": "google/gemma-2-27b-it",
+      "temperature": 0,
+      "max_output_tokens": 2048
+    }
+  ],
+  "judges": [
+    {
+      "name": "Gemma 4 31B",
+      "model": "google/gemma-4-31b-it",
+      "temperature": 0,
+      "structured_output": true
+    },
+    {
+      "name": "JEV 1.13",
+      "model": "typesafe/jev-1.13",
+      "temperature": null
+    }
+  ],
+  "default_target": "deepseek/deepseek-v4-pro",
+  "rubric_judges": [
+    {
+      "id": "deepseek",
+      "name": "DeepSeek V4 Pro",
+      "model": "deepseek/deepseek-v4-pro",
+      "temperature": 0,
+      "max_output_tokens": 8192,
+      "structured_output": false
+    },
+    {
+      "id": "oss",
+      "name": "GPT-OSS 120B",
+      "model": "openai/gpt-oss-120b",
+      "temperature": 0,
+      "max_output_tokens": 8192,
+      "structured_output": true
+    },
+    {
+      "id": "glm",
+      "name": "GLM 5.2",
+      "model": "z-ai/glm-5.2",
+      "temperature": 0,
+      "max_output_tokens": 8192,
+      "structured_output": true
+    },
+    {
+      "id": "kimi",
+      "name": "Kimi K3",
+      "model": "moonshotai/kimi-k3",
+      "temperature": 0,
+      "max_output_tokens": 8192,
+      "structured_output": true
+    }
+  ],
+  "prism_ensemble": [
+    "kimi",
+    "glm",
+    "deepseek",
+    "oss"
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "input": "Hello, world!",
+    "expected": {
+      "EncodingUnicodePoints": "48 65 6C 6C 6F 2C 20 77 6F 72 6C 64 21",
+      "EncodingUTF8Hex": "48 65 6c 6c 6f 2c 20 77 6f 72 6c 64 21",
+      "EncodingUTF16Hex": "48 00 65 00 6c 00 6c 00 6f 00 2c 00 20 00 77 00 6f 00 72 00 6c 00 64 00 21 00",
+      "EncodingUTF32Hex": "48 00 00 00 65 00 00 00 6c 00 00 00 6c 00 00 00 6f 00 00 00 2c 00 00 00 20 00 00 00 77 00 00 00 6f 00 00 00 72 00 00 00 6c 00 00 00 64 00 00 00 21 00 00 00",
+      "EncodingBase64": "SGVsbG8sIHdvcmxkIQ==",
+      "EncodingBase32": "JBSWY3DPFQQHO33SNRSCC===",
+      "EncodingBase16": "48656C6C6F2C20776F726C6421",
+      "EncodingBase85": "NM&qnZ!92pZ*pv8Ap",
+      "EncodingBinary": "01001000 01100101 01101100 01101100 01101111 00101100 00100000 01110111 01101111 01110010 01101100 01100100 00100001",
+      "EncodingOctal": "110 145 154 154 157 054 040 167 157 162 154 144 041",
+      "EncodingURL": "Hello%2C%20world%21",
+      "EncodingHTMLEntities": "&#x48;&#x65;&#x6C;&#x6C;&#x6F;&#x2C;&#x20;&#x77;&#x6F;&#x72;&#x6C;&#x64;&#x21;",
+      "EncodingROT13": "Uryyb, jbeyq!",
+      "EncodingCaesar": "Khoor, zruog!",
+      "EncodingCustomCipher": "Svool, dliow!"
+    }
+  },
+  {
+    "input": "Caffè 🌙 — 月",
+    "expected": {
+      "EncodingUnicodePoints": "43 61 66 66 E8 20 1F319 20 2014 20 6708",
+      "EncodingUTF8Hex": "43 61 66 66 c3 a8 20 f0 9f 8c 99 20 e2 80 94 20 e6 9c 88",
+      "EncodingUTF16Hex": "43 00 61 00 66 00 66 00 e8 00 20 00 3c d8 19 df 20 00 14 20 20 00 08 67",
+      "EncodingUTF32Hex": "43 00 00 00 61 00 00 00 66 00 00 00 66 00 00 00 e8 00 00 00 20 00 00 00 19 f3 01 00 20 00 00 00 14 20 00 00 20 00 00 00 08 67 00 00",
+      "EncodingBase64": "Q2FmZsOoIPCfjJkg4oCUIOaciA==",
+      "EncodingBase32": "INQWMZWDVAQPBH4MTEQOFAEUEDTJZCA=",
+      "EncodingBase16": "43616666C3A820F09F8C9920E2809420E69C88",
+      "EncodingBase85": "Lt$oS!>AzepNyFx;((MO=A4K",
+      "EncodingBinary": "01000011 01100001 01100110 01100110 11000011 10101000 00100000 11110000 10011111 10001100 10011001 00100000 11100010 10000000 10010100 00100000 11100110 10011100 10001000",
+      "EncodingOctal": "103 141 146 146 303 250 040 360 237 214 231 040 342 200 224 040 346 234 210",
+      "EncodingURL": "Caff%C3%A8%20%F0%9F%8C%99%20%E2%80%94%20%E6%9C%88",
+      "EncodingHTMLEntities": "&#x43;&#x61;&#x66;&#x66;&#xE8;&#x20;&#x1F319;&#x20;&#x2014;&#x20;&#x6708;",
+      "EncodingROT13": "Pnssè 🌙 — 月",
+      "EncodingCaesar": "Fdiiè 🌙 — 月",
+      "EncodingCustomCipher": "Xzuuè 🌙 — 月"
+    }
+  },
+  {
+    "input": "a b/!()*?~_\n<>&\"",
+    "expected": {
+      "EncodingUnicodePoints": "61 20 62 2F 21 28 29 2A 3F 7E 5F A 3C 3E 26 22",
+      "EncodingUTF8Hex": "61 20 62 2f 21 28 29 2a 3f 7e 5f 0a 3c 3e 26 22",
+      "EncodingUTF16Hex": "61 00 20 00 62 00 2f 00 21 00 28 00 29 00 2a 00 3f 00 7e 00 5f 00 0a 00 3c 00 3e 00 26 00 22 00",
+      "EncodingUTF32Hex": "61 00 00 00 20 00 00 00 62 00 00 00 2f 00 00 00 21 00 00 00 28 00 00 00 29 00 00 00 2a 00 00 00 3f 00 00 00 7e 00 00 00 5f 00 00 00 0a 00 00 00 3c 00 00 00 3e 00 00 00 26 00 00 00 22 00 00 00",
+      "EncodingBase64": "YSBiLyEoKSo/fl8KPD4mIg==",
+      "EncodingBase32": "MEQGELZBFAUSUP36L4FDYPRGEI======",
+      "EncodingBase16": "6120622F2128292A3F7E5F0A3C3E2622",
+      "EncodingBase85": "VIX2JAt)&-KYm{dJU%8O",
+      "EncodingBinary": "01100001 00100000 01100010 00101111 00100001 00101000 00101001 00101010 00111111 01111110 01011111 00001010 00111100 00111110 00100110 00100010",
+      "EncodingOctal": "141 040 142 057 041 050 051 052 077 176 137 012 074 076 046 042",
+      "EncodingURL": "a%20b%2F%21%28%29%2A%3F~_%0A%3C%3E%26%22",
+      "EncodingHTMLEntities": "&#x61;&#x20;&#x62;&#x2F;&#x21;&#x28;&#x29;&#x2A;&#x3F;&#x7E;&#x5F;&#xA;&#x3C;&#x3E;&#x26;&#x22;",
+      "EncodingROT13": "n o/!()*?~_\n<>&\"",
+      "EncodingCaesar": "d e/!()*?~_\n<>&\"",
+      "EncodingCustomCipher": "z y/!()*?~_\n<>&\""
+    }
+  }
+]
