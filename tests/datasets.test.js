@@ -39,5 +39,7 @@ test('the reviewer UI avoids the oversized native local-method menu and boots th
 test('GitHub Pages stages the complete static data directory',async()=>{
   const workflow=await read('.github/workflows/pages.yml');
   assert.match(workflow,/cp -R data site\//);
-  assert.doesNotMatch(workflow,/npm run build|docker|server\.js/);
+  assert.match(workflow,/npm run build/);
+  assert.match(workflow,/cp index\.html styles\.css app\.bundle\.js/);
+  assert.doesNotMatch(workflow,/docker|server\.js/);
 });

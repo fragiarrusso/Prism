@@ -1,4 +1,5 @@
 import {parseJSON, validateRewrite, validateTechniqueSelection, normalizeGemma, needsContext, ensemble, prismEnsemble, validateNative, choiceMargin} from './core.js';
+import {loadText} from './assets.js';
 
 // Public service addresses are intrinsic to browser-only API access.
 // No research-serving addresses, account identifiers, or secrets belong here.
@@ -60,16 +61,7 @@ const promptCache=new Map();
 async function promptAsset(name,signal){
   if(!['RedTeamAssistant_Augmented3.txt','prompt.txt'].includes(name))throw Error('Unknown prompt asset.');
   if(promptCache.has(name))return promptCache.get(name);
-  let value;
-  // The Node branch keeps the offline suite independent of mocked HTTP calls.
-  if(typeof process!=='undefined'&&process.versions?.node){
-    const {readFile}=await import('node:fs/promises');
-    value=await readFile(new URL(`./data/prompts/${name}`,import.meta.url),'utf8');
-  }else{
-    const response=await fetch(`./data/prompts/${name}`,{signal,cache:'no-store',credentials:'same-origin'});
-    if(!response.ok)throw Error(`Could not load the bundled ${name} prompt.`);
-    value=await response.text();
-  }
+  const value=await loadText(`data/prompts/${name}`,signal);
   if(!value.trim())throw Error(`The bundled ${name} prompt is empty.`);
   promptCache.set(name,value);
   return value;

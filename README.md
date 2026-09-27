@@ -1,6 +1,6 @@
 # PRISM generalization demo
 
-A standalone static companion for inspecting a modular prompt pipeline and its response-evaluation rule. No application server, dependency installation, analytics, or bundled keys.
+A standalone static companion for inspecting a modular prompt pipeline and its response-evaluation rule. Reviewers need no application server, dependency installation, analytics, or bundled keys.
 
 The demo uses one request at a time and contains no campaign scheduler or experimental result rows. Its transformation contracts mirror the corresponding Prism implementation: the bundled taxonomy system/user prompts, intent-preserving paraphrase prompt, fifteen encodings, and eight seeded perturbations. A compact, attributed prompt-only copy of XSTest and JailbreakBench Behaviors is included for reviewer exploration; a reviewer can also open a local JSON or JSONL file without uploading it.
 
@@ -12,7 +12,16 @@ From this directory:
 python3 -m http.server 8794 --bind 127.0.0.1
 ```
 
-Open the local address printed by the server. Use a web server, rather than opening `index.html` directly, because browser modules and the local JSON catalogs require HTTP.
+Open the local address printed by the server. The committed `app.bundle.js` contains the application and its static catalogs and prompt assets, so browsing the demo does not fetch those files separately.
+
+After editing JavaScript or files in `data/`, rebuild the browser artifact with Node 22 or later:
+
+```sh
+npm ci
+npm run build
+```
+
+Commit both `app.bundle.js` and the updated `index.html` with the source changes. Anonymous GitHub serves repository files directly, so a bundle created only inside a Pages deployment would not reach its mirror. The build uses a deferred classic script because Anonymous GitHub's sandbox gives the page an opaque origin and blocks JavaScript modules and local JSON/text fetches without CORS headers. It leaves the page's Content Security Policy and the host sandbox intact.
 
 Run the offline verification suite with `node --test tests/*.test.js` (Node 22 or later). Tests use synthetic fixtures and mocked services; they do not charge an API account.
 
@@ -100,7 +109,7 @@ For Google, enable Cloud Translation Basic and configure suitable API restrictio
 
 ## GitHub Pages
 
-Place the contents of this directory at the root of a dedicated site repository. In Settings → Pages, choose GitHub Actions. Run **Publish generalization demo** manually. The included workflow runs the offline tests and stages only the site assets and `data/`; it excludes tests and development documentation from the hosted artifact. All paths are relative, so project subpaths work.
+Place the contents of this directory at the root of a dedicated site repository. In Settings → Pages, choose GitHub Actions. Run **Publish generalization demo** manually. The included workflow rebuilds and checks the committed browser bundle, runs the offline tests, and stages only the site assets and `data/`; it excludes tests and development documentation from the hosted artifact. All paths are relative, so project subpaths work. Refresh the Anonymous GitHub mirror after updating its source revision.
 
 The hard static-hosting constraint is satisfied. Dataset browsing uses same-origin JSON files and local-file parsing uses the browser File API. There is no server route, database, build-time API, service worker, or runtime dependency on Prism. Taxonomy, paraphrase, target, judging, and translation requests continue to go directly from the browser to the explicitly named provider using reviewer-supplied keys.
 

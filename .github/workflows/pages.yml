@@ -19,11 +19,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm ci
+      - run: npm run build
+      - name: Verify the committed anonymous-host bundle is current
+        run: git diff --exit-code -- index.html app.bundle.js
       - run: node --test tests/*.test.js
       - name: Stage only public site assets
         run: |
           mkdir site
-          cp index.html styles.css app.js core.js services.js transforms.js favicon.svg robots.txt .nojekyll site/
+          cp index.html styles.css app.bundle.js favicon.svg robots.txt .nojekyll site/
           cp -R data site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4

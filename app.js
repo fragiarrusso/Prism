@@ -1,6 +1,7 @@
 import {escapeHTML as esc,wordCount,sampleTechniques,scores,valid,selectableTechniques,validateTechniqueSelection,techniqueExamples} from './core.js';
 import {LOCAL_METHODS,localMethod,localTransform} from './transforms.js';
 import {setKeys,keyStatus,clearKeys,rewrite,paraphrase,translate,generateTarget,judgeResponse} from './services.js?v=4';
+import {loadJSON} from './assets.js';
 
 const $=s=>document.querySelector(s);
 let catalog,languages,models,rubric,examples,datasets;
@@ -301,11 +302,13 @@ $('#clear-keys').onclick=()=>{clearKeys();$('#openrouter-key').value='';$('#goog
 $('#keys-dialog').addEventListener('close',()=>{$('#openrouter-key').value='';$('#google-key').value='';});
 window.addEventListener('hashchange',()=>{setPage(location.hash.slice(1));window.scrollTo({top:0,behavior:'instant'});});
 window.addEventListener('pagehide',()=>{state.controller?.abort();clearKeys();});
-async function load(name){const r=await fetch(`./data/${name}.json`);if(!r.ok)throw Error(`Could not load ${name}. Open this site through a web server, not a file URL.`);return r.json();}
+async function initialize(){
 try{
-  [catalog,languages,models,rubric,examples,datasets]=await Promise.all(['taxonomy','languages','models','rubric','examples','datasets'].map(load));
+  [catalog,languages,models,rubric,examples,datasets]=await Promise.all(['taxonomy','languages','models','rubric','examples','datasets'].map(loadJSON));
   for(const t of catalog.techniques)techniqueExamples(examples,t.id);
   state.target=models.default_target;state.targetChoice=state.target;
   resetPrismPipeline();
   setPage(location.hash.slice(1)||'studio');
 }catch(error){$('#main').innerHTML=`<div class="card prose"><h1>The demo could not load.</h1><p>${esc(error.message)}</p></div>`;}
+}
+initialize();
